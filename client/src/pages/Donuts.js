@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DeleteBtn from "../components/DeleteBtn";
+import { Col, Row, Container } from "../components/Grid";
+import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { List, ListItem } from "../components/List";
 
@@ -25,7 +27,10 @@ function Donuts() {
   }
 
   return (
-      <div className="Donuts">
+    <Container fluid>
+    <Row>
+      <Col size="md-4 sm-12">
+          <Jumbotron><h1>Dohnuts!</h1></Jumbotron>
           {donuts.length ? (
             <List>
               {donuts.map(donut => (
@@ -40,7 +45,9 @@ function Donuts() {
           ) : (
               <h3>No Results to Display</h3>
             )}
-    </div>
+            </Col>
+            </Row>
+    </Container>
   );
 }
 
