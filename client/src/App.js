@@ -1,13 +1,21 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Donuts from './pages/Donuts';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      {/* <h1><span role="img" aria-label="caution-emoji">⚠️</span>Under Construction<span role="img" aria-label="caution-emoji">⚠️</span></h1> */}
-    <Donuts />
-    </div>
+<Router>
+      <div>
+        <Switch>
+          <Route exact path={["/", "/books"]}>
+            <Donuts />
+          </Route>
+          <Route>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

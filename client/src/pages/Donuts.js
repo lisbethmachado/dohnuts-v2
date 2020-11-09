@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import EatBtn from "../components/EatBtn";
 import DeleteBtn from "../components/DeleteBtn";
 import { Input, FormBtn } from "../components/Form"
 import { Col, Row, Container } from "../components/Grid";
@@ -49,7 +50,7 @@ function Donuts() {
     <Row>
     <Col size="md-4 sm-12">
           <Jumbotron>
-            <h1>Bake Donuts?</h1>
+            <h1>Bake Donuts? <span role="img" aria-label="yum-emoji">😋</span></h1>
           </Jumbotron>
           <form>
             <Input
@@ -66,7 +67,7 @@ function Donuts() {
           </form>
         </Col>
       <Col size="md-4 sm-12">
-          <Jumbotron><h1>Dohnuts!</h1></Jumbotron>
+          <Jumbotron><h1>Donuts, yum! <span role="img" aria-label="donut-emoji">🍩</span></h1></Jumbotron>
           {donuts.length ? (
             <List>
               {donuts.map(donut => (
@@ -74,6 +75,7 @@ function Donuts() {
                   <strong>
                     {donut.title}
                   </strong>
+                  <EatBtn />
                   <DeleteBtn onClick={() => deleteDonut(donut._id)} />
                 </ListItem>
               ))}
