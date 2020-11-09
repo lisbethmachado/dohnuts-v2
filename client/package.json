@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A donut makign and eating app.",
   "main": "index.js",
+  "private": true,
   "proxy": "http://localhost:3002/",
   "dependencies": {
     "axios": "^0.18.0",
