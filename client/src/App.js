@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Donuts from './pages/Donuts';
+import NoMatch from "./pages/NoMatch";
 import './App.css';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
             <Donuts />
           </Route>
           <Route>
+            <NoMatch />
           </Route>
         </Switch>
       </div>
