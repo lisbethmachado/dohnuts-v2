@@ -84,6 +84,11 @@ function Donuts() {
               <h3>No Results to Display</h3>
             )}
             </Col>
+            <Col size="md-4 sm-12">
+          <Jumbotron>
+            <h1>Done Donuts. <span role="img" aria-label="heartbreak-emoji">💔</span></h1>
+          </Jumbotron>
+        </Col>
             </Row>
     </Container>
   );
