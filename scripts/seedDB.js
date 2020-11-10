@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const db = require("../models");
 
 mongoose.connect(
-  process.env.MONGODB_URI ||
+  process.env.MONGO_Atlas ||
   "mongodb://localhost/dohnuts"
 );
 
