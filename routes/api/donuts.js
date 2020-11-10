@@ -7,8 +7,7 @@ router.route("/")
   .post(donutsController.create);
 
 // Matches with "/api/donuts/:id"
-router
-  .route("/:id")
+router.route("/:id")
   .get(donutsController.findById)
   .put(donutsController.update)
   .delete(donutsController.remove);
