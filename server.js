@@ -19,7 +19,6 @@ mongoose.connect(process.env.MONGO_Atlas || "mongodb://localhost/dohnuts",
   useUnifiedTopology: true,
   useCreateIndex: true,
   useFindAndModify: false
-
 }
 );
 
