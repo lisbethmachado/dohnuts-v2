@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
+import logo from '../logo.svg';
 
 function NoMatch() {
   return (
@@ -8,13 +9,9 @@ function NoMatch() {
       <Row>
         <Col size="md-12">
           <Jumbotron>
-            <h1>404 Page Not Found</h1>
-            <h1>
-              <span role="img" aria-label="Face With Rolling Eyes Emoji">
-                🙄
-              </span>
-            </h1>
+            <h1>404 Page Not Found <span role="img" aria-label="sad-emoji">😢</span></h1>
           </Jumbotron>
+          <div className="donut" size="md-12"><img src={logo} styles={{align: 'center'}} className="App-logo" alt="logo" /></div>
         </Col>
       </Row>
     </Container>

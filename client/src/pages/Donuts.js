@@ -12,6 +12,7 @@ function Donuts() {
     // Setting our component's initial state
     const [donuts, setDonuts] = useState([])
     const [formObject, setFormObject] = useState({})
+    const [ate, setAte] = useState([])
 
 
     useEffect(() => {
@@ -26,6 +27,12 @@ function Donuts() {
 
     function deleteDonut(id) {
         API.deleteDonut(id)
+            .then(res => loadDonuts())
+            .catch(err => console.log(err));
+    }
+    function eatDonut(id) {
+        API.getDonut(id)
+            .then(res => setAte(res.data + console.log("Click")))
             .then(res => loadDonuts())
             .catch(err => console.log(err));
     }
@@ -76,7 +83,7 @@ function Donuts() {
                                     <strong>
                                         {donut.title}
                                     </strong>
-                                    <EatBtn />
+                                    <EatBtn onClick={() => eatDonut(donut._id)}/>
                                     <DeleteBtn onClick={() => deleteDonut(donut._id)} />
                                 </ListItem>
                             ))}
@@ -89,6 +96,20 @@ function Donuts() {
                     <Jumbotron>
                         <h1>Done Donuts. <span role="img" aria-label="heartbreak-emoji">💔</span></h1>
                     </Jumbotron>
+                    {ate.length ? (
+                        <List>
+                            {/* {ate.map(donut => (
+                                <ListItem key={donut._id}>
+                                    <strong>
+                                        {donut.title}
+                                    </strong>
+                                    <DeleteBtn onClick={() => deleteDonut(donut._id)} />
+                                </ListItem>
+                            ))} */}
+                        </List>
+                    ) : (
+                            <h3>No Results to Display</h3>
+                        )}
                 </Col>
             </Row>
             <Row>
@@ -114,7 +135,7 @@ function Donuts() {
                     <Jumbotron>
                         <h1>Happy Homer! <span role="img" aria-label="clap-emoji">👏</span></h1>
                     </Jumbotron>
-                    <img src={homer} alt="Homer" />
+                    <div className="homer"><img src={homer} alt="Homer" /></div>
                 </Col>
             </Row>
         </Container>
