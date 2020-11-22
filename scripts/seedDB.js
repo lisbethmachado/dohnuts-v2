@@ -60,5 +60,3 @@ db.Donut
     console.error(err);
     process.exit(1);
   });
-
-// This file empties the Donuts collection and inserts the donuts above

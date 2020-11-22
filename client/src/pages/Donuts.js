@@ -1,7 +1,7 @@
 import API from "../utils/API";
 import Banner from '../components/Banner'
 import { Col, Row, Container } from "../components/Grid";
-// import DeleteBtn from "../components/DeleteBtn";
+import DeleteBtn from "../components/DeleteBtn";
 import DonutSpinner from "../components/DonutSpinner"
 import EatBtn from "../components/EatBtn";
 import Homer from "../components/Homer"
@@ -14,16 +14,11 @@ function Donuts() {
     // Setting our component's initial state
     const [donuts, setDonuts] = useState([])
     const [formObject, setFormObject] = useState({})
-    // const [ate, setAte] = useState([])
 
 
     useEffect(() => {
         loadDonuts()
     }, [])
-
-    // useEffect(() => {
-    //     loadAte()
-    // }, [])
 
     function loadDonuts() {
         API.getDonuts()
@@ -31,17 +26,11 @@ function Donuts() {
             .catch(err => console.log(err));
     };
 
-    // function loadAte() {
-    //     API.getDonuts()
-    //         .then(res => setAte(res.data))
-    //         .catch(err => console.log(err));
-    // };
-
-    // function deleteDonut(id) {
-    //     API.deleteDonut(id)
-    //         .then(res => loadDonuts())
-    //         .catch(err => console.log(err));
-    // };
+    function deleteDonut(id) {
+        API.deleteDonut(id)
+            .then(res => loadDonuts())
+            .catch(err => console.log(err));
+    };
 
     function eatDonut(id) {
         API.getDonut(id)
@@ -69,9 +58,6 @@ function Donuts() {
         <Container fluid>
             <Row>
                 <Col size="md-12 sm-12">
-                    {/* <Jumbotron>
-                        <h1>Dohnuts <span role="img" aria-label="fire-emoji">🔥</span></h1>
-                    </Jumbotron> */}
                     <Banner />
                     </Col>
                     </Row>
@@ -120,14 +106,15 @@ function Donuts() {
                     </Jumbotron>
                     {donuts.length ? (
                         <List>
-                            {/* {ate.map(donut => (
+                            {donuts.map(donut => (
                                 <ListItem key={donut._id}>
                                     <strong>
-                                        {donut.title}
+                                        {donuts.title}
                                     </strong>
+                                    {/* <EatBtn onClick={() => eatDonut(donut._id)}/> */}
                                     <DeleteBtn onClick={() => deleteDonut(donut._id)} />
                                 </ListItem>
-                            ))} */}
+                            ))}
                         </List>
                     ) : (
                             <h3>No Results to Display</h3>
