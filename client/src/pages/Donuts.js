@@ -19,9 +19,19 @@ function Donuts() {
         loadDonuts()
     }, [])
 
+    useEffect(() => {
+        loadAte()
+    }, [])
+
     function loadDonuts() {
         API.getDonuts()
             .then(res => setDonuts(res.data))
+            .catch(err => console.log(err));
+    };
+
+    function loadAte() {
+        API.getDonuts()
+            .then(res => setAte(res.data))
             .catch(err => console.log(err));
     };
 
@@ -33,7 +43,7 @@ function Donuts() {
     function eatDonut(id) {
         API.getDonut(id)
             .then(res => setAte(res.data + console.log("Click")))
-            .then(res => loadDonuts())
+            .then(res => loadAte())
             .catch(err => console.log(err));
     }
 
