@@ -20,6 +20,8 @@ function Donuts() {
         loadDonuts()
     }, [])
 
+    const gone = [];
+
     function loadDonuts() {
         API.getDonuts()
             .then(res => setDonuts(res.data))
@@ -34,7 +36,7 @@ function Donuts() {
 
     function eatDonut(id) {
         API.getDonut(id)
-            .then(res => console.log("Click" + id))
+            .then(res => console.log("Eat " + JSON.stringify(res.data.title)))
             .catch(err => console.log(err));
     };
 
@@ -88,9 +90,9 @@ function Donuts() {
                         <List>
                             {donuts.map(donut => (
                                 <ListItem key={donut._id}>
-                                    <strong>
+                                    {/* <strong> */}
                                         {donut.title}
-                                    </strong>
+                                    {/* </strong> */}
                                     <EatBtn onClick={() => eatDonut(donut._id)}/>
                                     {/* <DeleteBtn onClick={() => deleteDonut(donut._id)} /> */}
                                 </ListItem>
@@ -104,13 +106,13 @@ function Donuts() {
                     <Jumbotron>
                         <h1>Gone. <span role="img" aria-label="heartbreak-emoji">💔</span></h1>
                     </Jumbotron>
-                    {donuts.length ? (
+                    {gone.length ? (
                         <List>
-                            {donuts.map(donut => (
+                            {gone.map(donut => (
                                 <ListItem key={donut._id}>
-                                    <strong>
-                                        {donuts.title}
-                                    </strong>
+                                    {/* <strong> */}
+                                        {gone.title}
+                                    {/* </strong> */}
                                     {/* <EatBtn onClick={() => eatDonut(donut._id)}/> */}
                                     <DeleteBtn onClick={() => deleteDonut(donut._id)} />
                                 </ListItem>
