@@ -20,12 +20,24 @@
 }
 
 .title {
+  text-align: center;
   font-family: 'Rock Salt';
   font-size: 50px;
+  align-items: center;
+}
+
+.media {
+  background-color: rgb(194, 142, 107);
+  border-style: dashed;
+  border-color: black;
+  margin-bottom: 15px;
 }
 
 .description {
+  text-align: center;
   color: #ffffff;
+  font-size: 20px;
+  align-items: center;
 }
 
 
@@ -37,9 +49,9 @@
 }
 
 .donut {
-  text-align: center;
   align-items: center;
   justify-content: center;
+  padding-right: 150px;
 }
 
 .App-header {
