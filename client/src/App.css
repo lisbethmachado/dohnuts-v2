@@ -16,8 +16,8 @@
   align-items: center;
   justify-content: center;
   /* height: 150vmin; */
-  /* width: 50%;
-  height: 50%; */
+  /* width: 50%; */
+  height: 100%;
 }
 
 .title {
@@ -55,7 +55,6 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  /* padding-right: 150px; */
 }
 
 .App-header {

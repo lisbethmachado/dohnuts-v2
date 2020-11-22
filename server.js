@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-mongoose.connect(process.env.MONGO_Atlas || "mongodb://localhost/dohnuts",
+mongoose.connect(process.env.MONGO_Atlas || "mongodb://localhost/donuts",
 {
   useNewUrlParser: true,
   useUnifiedTopology: true,

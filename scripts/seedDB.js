@@ -3,7 +3,7 @@ const db = require("../models");
 
 mongoose.connect(
   process.env.MONGO_Atlas ||
-  "mongodb://localhost/dohnuts"
+  "mongodb://localhost/donuts"
 );
 
 const donutSeed = [
