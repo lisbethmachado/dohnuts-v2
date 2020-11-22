@@ -12,9 +12,10 @@ body {
   background-size: cover;
 }
 
-h1 {
-  font-family: 'Texturina';
+h2 {
+  font-family:'Roboto', sans-serif;
   text-align: center;
+  color: rgb(47, 47, 47);
 }
 
 code {

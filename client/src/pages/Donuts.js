@@ -1,7 +1,7 @@
 import API from "../utils/API";
 import Banner from '../components/Banner'
 import { Col, Row, Container } from "../components/Grid";
-import DeleteBtn from "../components/DeleteBtn";
+// import DeleteBtn from "../components/DeleteBtn";
 import DonutSpinner from "../components/DonutSpinner"
 import EatBtn from "../components/EatBtn";
 import Homer from "../components/Homer"
@@ -37,11 +37,11 @@ function Donuts() {
             .catch(err => console.log(err));
     };
 
-    function deleteDonut(id) {
-        API.deleteDonut(id)
-            .then(res => loadDonuts())
-            .catch(err => console.log(err));
-    };
+    // function deleteDonut(id) {
+    //     API.deleteDonut(id)
+    //         .then(res => loadDonuts())
+    //         .catch(err => console.log(err));
+    // };
 
     function eatDonut(id) {
         API.getDonut(id)
@@ -79,7 +79,7 @@ function Donuts() {
             <Row>
                 <Col size="md-4 sm-12">
                     <Jumbotron>
-                        <h1>Bake? <span role="img" aria-label="yum-emoji">😋</span></h1>
+                        <h2>Bake? <span role="img" aria-label="yum-emoji">😋</span></h2>
                     </Jumbotron>
                     <form>
                         <Input
@@ -98,7 +98,7 @@ function Donuts() {
                     
                 </Col>
                 <Col size="md-4 sm-12">
-                    <Jumbotron><h1>Ready! <span role="img" aria-label="donut-emoji">🍩</span></h1></Jumbotron>
+                    <Jumbotron><h2>Ready! <span role="img" aria-label="donut-emoji">🍩</span></h2></Jumbotron>
                     {donuts.length ? (
                         <List>
                             {donuts.map(donut => (
@@ -107,7 +107,7 @@ function Donuts() {
                                         {donut.title}
                                     </strong>
                                     <EatBtn onClick={() => eatDonut(donut._id)}/>
-                                    <DeleteBtn onClick={() => deleteDonut(donut._id)} />
+                                    {/* <DeleteBtn onClick={() => deleteDonut(donut._id)} /> */}
                                 </ListItem>
                             ))}
                         </List>
@@ -117,7 +117,7 @@ function Donuts() {
                 </Col>
                 <Col size="md-4 sm-12">
                     <Jumbotron>
-                        <h1>Gone. <span role="img" aria-label="heartbreak-emoji">💔</span></h1>
+                        <h2>Gone. <span role="img" aria-label="heartbreak-emoji">💔</span></h2>
                     </Jumbotron>
                     {ate.length ? (
                         <List>
@@ -138,7 +138,7 @@ function Donuts() {
             <Row>
                 <Col size="md-6 sm-12">
                     <Jumbotron>
-                        <h1>Surprise Me! <span role="img" aria-label="present-emoji">🎁</span></h1>
+                        <h2>Surprise Me! <span role="img" aria-label="present-emoji">🎁</span></h2>
                     </Jumbotron>
                     <form>
                         <Input
