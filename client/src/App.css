@@ -11,6 +11,7 @@
 
 .Homer {
   /* margin-left: 150px; */
+  margin-top: -10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,25 +23,37 @@
 .title {
   text-align: center;
   font-family: 'Rock Salt';
-  font-size: 50px;
+  color: #ffffff;
+  font-size: 45px;
   align-items: center;
+  text-shadow: 2px 2px rgb(80, 80, 79);
 }
 
 .media {
   background-color: rgb(194, 142, 107);
-  border-style: dashed;
-  border-color: black;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: rgb(29, 16, 2);
   margin-bottom: 15px;
+  align-items: center;
 }
 
 .description {
   text-align: center;
-  color: #ffffff;
+  color: #eeeeee;
   font-size: 20px;
   align-items: center;
 }
 
-
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 2) 
+{
+    .description .ml-3 {
+       display:none;
+    }
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -49,9 +62,10 @@
 }
 
 .donut {
+  text-align: center;
   align-items: center;
   justify-content: center;
-  padding-right: 150px;
+  /* padding-right: 150px; */
 }
 
 .App-header {
