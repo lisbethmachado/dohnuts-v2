@@ -32,7 +32,7 @@ Allow your inner baker to dream up custom donut recipes. Create a list of desire
       
 ## Screenshots
 ### Web Application:
-![LandingPg](./assets/landing-pg.png)
+![LandingPg](./assets/landing-page.png)
 
 ### Mobile Application:
 ![MobileView](./assets/mobile-view.png)

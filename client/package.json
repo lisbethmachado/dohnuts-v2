@@ -4,7 +4,7 @@
   "description": "A donut makign and eating app.",
   "main": "index.js",
   "private": true,
-  "proxy": "http://localhost:3002/",
+  "proxy": "http://localhost:3001/",
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.6.3",
