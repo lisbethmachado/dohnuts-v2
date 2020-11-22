@@ -6,7 +6,8 @@ import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { List, ListItem } from "../components/List";
-import homer from "../images/homer-happy.png"
+// import homer from "../images/homer-happy.png"
+import logo from '../logo.svg';
 
 function Donuts() {
     // Setting our component's initial state
@@ -142,10 +143,11 @@ function Donuts() {
                     </form>
                 </Col>
                 <Col size="md-6 sm-12">
-                    <Jumbotron>
+                    {/* <Jumbotron>
                         <h1>Happy Homer! <span role="img" aria-label="clap-emoji">👏</span></h1>
-                    </Jumbotron>
-                    <div className="homer"><img src={homer} alt="Homer" /></div>
+                    </Jumbotron> */}
+                    {/* <div className="homer"><img src={homer} alt="Homer" /></div> */}
+                    <div className="donut" size="md-12"><img src={logo} styles={{align: 'center'}} className="App-logo" alt="logo" /></div>
                 </Col>
             </Row>
         </Container>
