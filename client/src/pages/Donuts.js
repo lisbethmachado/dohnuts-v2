@@ -41,13 +41,14 @@ function Donuts() {
         API.deleteDonut(id)
             .then(res => loadDonuts())
             .catch(err => console.log(err));
-    }
+    };
+
     function eatDonut(id) {
         API.getDonut(id)
             .then(res => setAte(res.data + console.log("Click")))
             .then(res => loadAte())
             .catch(err => console.log(err));
-    }
+    };
 
     function handleInputChange(event) {
         const { name, value } = event.target;
