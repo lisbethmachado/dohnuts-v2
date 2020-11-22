@@ -10,6 +10,7 @@ body {
   background-image: url('../src/images/donuts-yellow.jpg');
   background-repeat: repeat;
   background-size: cover;
+  height: 2000px;
 }
 
 h1 {
