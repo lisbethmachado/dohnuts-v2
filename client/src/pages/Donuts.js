@@ -78,7 +78,7 @@ function Donuts() {
             <Row>
                 <Col size="md-4 sm-12">
                     <Jumbotron>
-                        <h1>Bake Donuts? <span role="img" aria-label="yum-emoji">😋</span></h1>
+                        <h1>Bake? <span role="img" aria-label="yum-emoji">😋</span></h1>
                     </Jumbotron>
                     <form>
                         <Input
@@ -97,7 +97,7 @@ function Donuts() {
                     
                 </Col>
                 <Col size="md-4 sm-12">
-                    <Jumbotron><h1>Ready, yum! <span role="img" aria-label="donut-emoji">🍩</span></h1></Jumbotron>
+                    <Jumbotron><h1>Ready! <span role="img" aria-label="donut-emoji">🍩</span></h1></Jumbotron>
                     {donuts.length ? (
                         <List>
                             {donuts.map(donut => (
@@ -116,7 +116,7 @@ function Donuts() {
                 </Col>
                 <Col size="md-4 sm-12">
                     <Jumbotron>
-                        <h1>Done Donuts. <span role="img" aria-label="heartbreak-emoji">💔</span></h1>
+                        <h1>Gone. <span role="img" aria-label="heartbreak-emoji">💔</span></h1>
                     </Jumbotron>
                     {ate.length ? (
                         <List>
