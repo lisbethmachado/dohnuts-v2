@@ -14,16 +14,16 @@ function Donuts() {
     // Setting our component's initial state
     const [donuts, setDonuts] = useState([])
     const [formObject, setFormObject] = useState({})
-    const [ate, setAte] = useState([])
+    // const [ate, setAte] = useState([])
 
 
     useEffect(() => {
         loadDonuts()
     }, [])
 
-    useEffect(() => {
-        loadAte()
-    }, [])
+    // useEffect(() => {
+    //     loadAte()
+    // }, [])
 
     function loadDonuts() {
         API.getDonuts()
@@ -31,11 +31,11 @@ function Donuts() {
             .catch(err => console.log(err));
     };
 
-    function loadAte() {
-        API.getDonuts()
-            .then(res => setAte(res.data))
-            .catch(err => console.log(err));
-    };
+    // function loadAte() {
+    //     API.getDonuts()
+    //         .then(res => setAte(res.data))
+    //         .catch(err => console.log(err));
+    // };
 
     // function deleteDonut(id) {
     //     API.deleteDonut(id)
@@ -45,8 +45,7 @@ function Donuts() {
 
     function eatDonut(id) {
         API.getDonut(id)
-            .then(res => setAte(res.data + console.log("Click")))
-            .then(res => loadAte())
+            .then(res => console.log("Click" + id))
             .catch(err => console.log(err));
     };
 
@@ -79,7 +78,7 @@ function Donuts() {
             <Row>
                 <Col size="md-4 sm-12">
                     <Jumbotron>
-                        <h2>Bake? <span role="img" aria-label="yum-emoji">😋</span></h2>
+                        <h1>Bake? <span role="img" aria-label="yum-emoji">😋</span></h1>
                     </Jumbotron>
                     <form>
                         <Input
@@ -98,7 +97,7 @@ function Donuts() {
                     
                 </Col>
                 <Col size="md-4 sm-12">
-                    <Jumbotron><h2>Ready! <span role="img" aria-label="donut-emoji">🍩</span></h2></Jumbotron>
+                    <Jumbotron><h1>Ready! <span role="img" aria-label="donut-emoji">🍩</span></h1></Jumbotron>
                     {donuts.length ? (
                         <List>
                             {donuts.map(donut => (
@@ -117,9 +116,9 @@ function Donuts() {
                 </Col>
                 <Col size="md-4 sm-12">
                     <Jumbotron>
-                        <h2>Gone. <span role="img" aria-label="heartbreak-emoji">💔</span></h2>
+                        <h1>Gone. <span role="img" aria-label="heartbreak-emoji">💔</span></h1>
                     </Jumbotron>
-                    {ate.length ? (
+                    {donuts.length ? (
                         <List>
                             {/* {ate.map(donut => (
                                 <ListItem key={donut._id}>
@@ -138,7 +137,7 @@ function Donuts() {
             <Row>
                 <Col size="md-6 sm-12">
                     <Jumbotron>
-                        <h2>Surprise Me! <span role="img" aria-label="present-emoji">🎁</span></h2>
+                        <h1>Surprise Me! <span role="img" aria-label="present-emoji">🎁</span></h1>
                     </Jumbotron>
                     <form>
                         <Input

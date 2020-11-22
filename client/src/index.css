@@ -12,13 +12,12 @@ body {
   background-size: cover;
 }
 
-h2 {
-  font-family:'Roboto', sans-serif;
+h1 {
+  font-family: 'Shadows Into Light Two', cursive;
   text-align: center;
   color: rgb(47, 47, 47);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Roboto', sans-serif;
 }

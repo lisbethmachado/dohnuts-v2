@@ -1,5 +1,14 @@
 const db = require("../models");
 
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://lisbethmachado:2k19Pepp$@cluster1.0lage.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("donuts").collection("donuts");
+  // perform actions on the collection object
+  client.close();
+});
+
 module.exports = {
   findAll: function(req, res) {
     db.Donut
