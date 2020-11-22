@@ -10,14 +10,22 @@
 }
 
 .Homer {
+  /* margin-left: 150px; */
   display: flex;
   align-items: center;
   justify-content: center;
-  max-height: 350vh;
+  /* height: 150vmin; */
+  /* width: 50%;
+  height: 50%; */
 }
 
 .title {
   font-family: 'Rock Salt';
+  font-size: 50px;
+}
+
+.description {
+  color: #ffffff;
 }
 
 
