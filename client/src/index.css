@@ -7,8 +7,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* background-color: rgb(248, 247, 247); */
   background-color: white;
+  background-image: url('../src/images/donuts-yellow.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
+h2 {
+  font-family: 'Rock Salt', cursive;
+}
+
+h1 {
+  font-family: 'Texturina';
+  text-align: center;
+}
+
+.title {
+  font-family: 'Rock Salt';
+  color: #ffffff;
+  text-align: left;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

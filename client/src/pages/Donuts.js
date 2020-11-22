@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
-import EatBtn from "../components/EatBtn";
-import DeleteBtn from "../components/DeleteBtn";
-import { Input, FormBtn } from "../components/Form"
-import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
+import Banner from '../components/Banner'
+import { Col, Row, Container } from "../components/Grid";
+import DeleteBtn from "../components/DeleteBtn";
+import DonutSpinner from "../components/DonutSpinner"
+import EatBtn from "../components/EatBtn";
+import Homer from "../components/Homer"
+import { Input, FormBtn } from "../components/Form"
+import Jumbotron from "../components/Jumbotron";
 import { List, ListItem } from "../components/List";
-// import homer from "../images/homer-happy.png"
-import logo from '../logo.svg';
+import React, { useState, useEffect } from "react";
 
 function Donuts() {
     // Setting our component's initial state
@@ -67,6 +68,14 @@ function Donuts() {
     return (
         <Container fluid>
             <Row>
+                <Col size="md-12 sm-12">
+                    {/* <Jumbotron>
+                        <h1>Dohnuts <span role="img" aria-label="fire-emoji">🔥</span></h1>
+                    </Jumbotron> */}
+                    <Banner />
+                    </Col>
+                    </Row>
+            <Row>
                 <Col size="md-4 sm-12">
                     <Jumbotron>
                         <h1>Bake Donuts? <span role="img" aria-label="yum-emoji">😋</span></h1>
@@ -84,9 +93,11 @@ function Donuts() {
                             Bake
               </FormBtn>
                     </form>
+                    <DonutSpinner />
+                    
                 </Col>
                 <Col size="md-4 sm-12">
-                    <Jumbotron><h1>Donuts, yum! <span role="img" aria-label="donut-emoji">🍩</span></h1></Jumbotron>
+                    <Jumbotron><h1>Ready, yum! <span role="img" aria-label="donut-emoji">🍩</span></h1></Jumbotron>
                     {donuts.length ? (
                         <List>
                             {donuts.map(donut => (
@@ -143,11 +154,7 @@ function Donuts() {
                     </form>
                 </Col>
                 <Col size="md-6 sm-12">
-                    {/* <Jumbotron>
-                        <h1>Happy Homer! <span role="img" aria-label="clap-emoji">👏</span></h1>
-                    </Jumbotron> */}
-                    {/* <div className="homer"><img src={homer} alt="Homer" /></div> */}
-                    <div className="donut" size="md-12"><img src={logo} styles={{align: 'center'}} className="App-logo" alt="logo" /></div>
+                    <Homer />
                 </Col>
             </Row>
         </Container>

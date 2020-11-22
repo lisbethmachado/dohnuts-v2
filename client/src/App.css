@@ -6,12 +6,21 @@
   height: 40vmin;
   pointer-events: none;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 
-.h1 {
-  font-family: 'Rock Salt';
-  text-align: center;
+.Homer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 350vh;
 }
+
+.title {
+  font-family: 'Rock Salt';
+}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -20,14 +29,6 @@
 }
 
 .donut {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
-
-.homer {
-  display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
