@@ -1,5 +1,5 @@
 import React from "react";
-import homer from "../../images/homer2.png"
+import homer from "../../images/homer.png"
 
 function Homer() {
     return (
