@@ -31,7 +31,7 @@ module.exports = {
   },
   update: function(req, res) {
     db.Donut
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .findOneAndUpdate({ _id: req.params.id }, req.body.ate)
       .then(dbModel => res.json(dbModel))
       .then(console.log("Selected" + _id))
       .catch(err => res.status(422).json(err));

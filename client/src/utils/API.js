@@ -14,8 +14,8 @@ export default {
     return axios.delete("/api/donuts/" + id);
   },
   // Attempt to update donut boolean
-  updateDonut: function(ate) {
-    return axios.put("/api/donuts/" + ate);
+  updateDonut: function(id) {
+    return axios.get("/api/donuts/" + id)
   },
   // Saves a donut to the database
   saveDonut: function(donutData) {

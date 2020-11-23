@@ -13,47 +13,17 @@ const donut = [
     date: new Date(Date.now())
   },
   {
-    title: "Red Velvet Cream Cheese Donut",
+    title: "Raspberry Jelly Filled Swirl",
     ate: false,
     date: new Date(Date.now())
   },
   {
-    title: "Raspberry Jelly Pecans Swirl",
+    title: "Caramel Chocolate Filled Churro",
     ate: false,
     date: new Date(Date.now())
   },
   {
-    title: "Coconut Cream Berry Donut",
-    ate: false,
-    date: new Date(Date.now())
-  },
-  {
-    title: "Cinnamon Roll Glazed Donut",
-    ate: false,
-    date: new Date(Date.now())
-  },
-  {
-    title: "Peanut Butter Cup Donut",
-    ate: false,
-    date: new Date(Date.now())
-  },
-  {
-    title: "Caramel Apple Crisp Donut",
-    ate: false,
-    date: new Date(Date.now())
-  },
-  {
-    title: "Sugar Glazed Donut Twist",
-    ate: false,
-    date: new Date(Date.now())
-  },
-  {
-    title: "Dozen Sugar Donut Holes",
-    ate: false,
-    date: new Date(Date.now())
-  },
-  {
-    title: "Plain Doughy Donut",
+    title: "Glazed Sugar Donut Twist",
     ate: false,
     date: new Date(Date.now())
   }

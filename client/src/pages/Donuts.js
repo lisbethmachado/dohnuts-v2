@@ -14,14 +14,13 @@ import React, { useState, useEffect } from "react";
 function Donuts() {
     // Setting our component's initial state
     const [donuts, setDonuts] = useState([])
+    const [ate, setAte] = useState([])
     const [formObject, setFormObject] = useState({})
 
 
     useEffect(() => {
         loadDonuts()
     }, [])
-
-    const gone = [];
 
     function loadDonuts() {
         API.getDonuts()
@@ -36,8 +35,9 @@ function Donuts() {
     };
 
     function eatDonut(id) {
-        API.getDonut(id)
-            .then(res => console.log("Eat " + JSON.stringify(res.data.title)))
+        API.updateDonut(id)
+            // .then(res => console.log("Eat " + JSON.stringify(res.data.title)))
+            .then(res => setAte({ate: true}))
             .catch(err => console.log(err));
     };
 
@@ -95,7 +95,7 @@ function Donuts() {
                                         {donut.title}
                                     {/* </strong> */}
                                     <EatBtn 
-                                    onClick={() => eatDonut(donut._id)}/>
+                                    onClick={() => eatDonut({ate: true})}/>
                                     {/* <DeleteBtn onClick={() => deleteDonut(donut._id)} /> */}
                                 </ListItem>
                             ))}
@@ -109,14 +109,13 @@ function Donuts() {
                     <Jumbotron>
                         <h1>Gone. <span role="img" aria-label="heartbreak-emoji">💔</span></h1>
                     </Jumbotron>
-                    {gone.length ? (
+                    {ate.length ? (
                         <List>
-                            {gone.map(donut => (
+                            {ate.map(donut => (
                                 <ListItem key={donut._id}>
-                                    {/* <strong> */}
-                                        {gone.title}
-                                    {/* </strong> */}
-                                    {/* <EatBtn onClick={() => eatDonut(donut._id)}/> */}
+                                    <strong>
+                                        {ate.title}
+                                    </strong>
                                     <DeleteBtn onClick={() => deleteDonut(donut._id)} />
                                 </ListItem>
                             ))}
