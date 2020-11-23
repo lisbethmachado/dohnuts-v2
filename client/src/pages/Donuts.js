@@ -27,6 +27,12 @@ function Donuts() {
             .catch(err => console.log(err));
     };
 
+    function eatDonut(id) {
+        API.updateDonut(id)
+            .then(res => loadDonuts())
+            .catch(err => console.log(err));
+    };
+
     function deleteDonut(id) {
         API.deleteDonut(id)
             .then(res => loadDonuts())
@@ -84,7 +90,7 @@ function Donuts() {
                             {donuts.map(donut => (
                                 <ListItem key={donut._id}>
                                         {donut.title}
-                                    <EatBtn />
+                                    <EatBtn onClick={() => eatDonut(donut._id)}/>
                                 </ListItem>
                             ))}
                         </List>
@@ -121,7 +127,7 @@ function Donuts() {
                         <Input
                             onChange={handleInputChange}
                             name="title"
-                            placeholder="Random Donut"
+                            placeholder="Random"
                         />
                         <FormBtn
                             disabled={true}
@@ -132,7 +138,7 @@ function Donuts() {
                     </form>
                 </Col>
                 <Col size="md-6 sm-12">
-                    <Homer onClick={() => console.log("sound play")}/>
+                    <Homer />
                 </Col>
             </Row>
         </Container>

@@ -22,7 +22,16 @@ module.exports = {
   },
   update: function(req, res) {
     db.Donut
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+    findByIdAndUpdate(
+      params.id,
+      { $push: { ate: true } },
+    )
+      .then(dbModel => {
+        res.json(dbModel);
+      })
+      .catch(err => {
+        res.json(err);
+      })
       .then(dbModel => res.json(dbModel))
       .then(console.log("Selected" + res))
       .catch(err => res.status(422).json(err));
