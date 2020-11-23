@@ -14,11 +14,12 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 
+
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://lisbethmachado:2k19Pepp$@cluster1.0lage.mongodb.net/<dbname>?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, });
+const uri = "mongodb+srv://lisbethmachado:donuts@cluster0.alvtr.mongodb.net/donuts?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect(err => {
-  const collection = client.db("donuts").collection("donuts");
+  const collection = client.db("test").collection("devices");
   // perform actions on the collection object
   client.close();
 });

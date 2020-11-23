@@ -33,12 +33,6 @@ function Donuts() {
             .catch(err => console.log(err));
     };
 
-    function eatDonut(id) {
-        API.updateDonut(id)
-            .then(res => loadDonuts())
-            .catch(err => console.log(err));
-    };
-
     function handleInputChange(event) {
         const { name, value } = event.target;
         setFormObject({ ...formObject, [name]: value })
@@ -89,29 +83,25 @@ function Donuts() {
                         <List>
                             {donuts.map(donut => (
                                 <ListItem key={donut._id}>
-                                    {/* <strong> */}
                                         {donut.title}
-                                    {/* </strong> */}
-                                    <EatBtn onClick={eatDonut}/>
-                                    <DeleteBtn onClick={() => deleteDonut(donut._id)} />
+                                    <EatBtn />
                                 </ListItem>
                             ))}
                         </List>
                     ) : (
                             <h3>No Results to Display</h3>
                         )}
-                {/* <SoundBtn onClick={() => console.log("sound play")} /> */}
                 </Col>
                 <Col size="md-4 sm-12">
                     <Jumbotron>
                         <h1>Gone. <span role="img" aria-label="heartbreak-emoji">💔</span></h1>
                     </Jumbotron>
-                    {/* {ate.length ? (
+                    {donuts.length ? (
                         <List>
-                            {ate.map(donut => (
+                            {donuts.map(donut => (
                                 <ListItem key={donut._id}>
                                     <strong>
-                                    {count}
+                                    {donuts.title}
                                     </strong>
                                     <DeleteBtn onClick={() => deleteDonut(donut._id)} />
                                 </ListItem>
@@ -119,7 +109,7 @@ function Donuts() {
                         </List>
                     ) : (
                             <h3>No Results to Display</h3>
-                        )} */}
+                        )}
                 </Col>
             </Row>
             <Row>
