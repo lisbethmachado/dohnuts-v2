@@ -9,15 +9,28 @@
   margin-bottom: 50px;
 }
 
-.Homer {
-  /* margin-left: 150px; */
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* height: 150vmin; */
-  /* width: 50%; */
-  height: 100%;
+body {
+  margin-top: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background-color: rgb(248, 247, 247); */
+  background-color: white;
+  background-image: url('../src/images/donuts-yellow.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+h1 {
+  font-family: 'Shadows Into Light Two', cursive;
+  text-align: center;
+  color: rgb(47, 47, 47);
+}
+
+code {
+  font-family: 'Roboto', sans-serif;
 }
 
 .title {
@@ -38,19 +51,6 @@
   align-items: center;
 }
 
-.description {
-  text-align: center;
-  color: #eeeeee;
-  font-size: 20px;
-  align-items: center;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;    
-}
-}
-
 .donut {
   text-align: center;
   align-items: center;
@@ -58,19 +58,18 @@
   margin-left: 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 50vh;
+.Homer {
+  margin-top: 10px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;    
+}
 }
 
 @keyframes App-logo-spin {
