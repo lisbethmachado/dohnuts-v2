@@ -26,7 +26,7 @@ client.connect(err => {
 mongoose.connect(process.env.MONGO_Atlas || "mongodb://localhost/donuts",
 {
   useNewUrlParser: true,
-  // useUnifiedTopology: true,
+  useUnifiedTopology: true,
   useCreateIndex: true
 }
 );
