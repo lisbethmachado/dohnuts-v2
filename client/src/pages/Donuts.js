@@ -10,6 +10,7 @@ import Jumbotron from "../components/Jumbotron";
 import { List, ListItem } from "../components/List";
 import React, { useState, useEffect } from "react";
 
+
 function Donuts() {
     // Setting our component's initial state
     const [donuts, setDonuts] = useState([])
@@ -93,7 +94,8 @@ function Donuts() {
                                     {/* <strong> */}
                                         {donut.title}
                                     {/* </strong> */}
-                                    <EatBtn onClick={() => eatDonut(donut._id)}/>
+                                    <EatBtn 
+                                    onClick={() => eatDonut(donut._id)}/>
                                     {/* <DeleteBtn onClick={() => deleteDonut(donut._id)} /> */}
                                 </ListItem>
                             ))}
@@ -101,6 +103,7 @@ function Donuts() {
                     ) : (
                             <h3>No Results to Display</h3>
                         )}
+                {/* <SoundBtn onClick={() => console.log("sound play")} /> */}
                 </Col>
                 <Col size="md-4 sm-12">
                     <Jumbotron>
@@ -143,7 +146,7 @@ function Donuts() {
                     </form>
                 </Col>
                 <Col size="md-6 sm-12">
-                    <Homer />
+                    <Homer onClick={() => console.log("sound play")}/>
                 </Col>
             </Row>
         </Container>

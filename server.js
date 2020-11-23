@@ -14,24 +14,23 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 
-// const MongoClient = require('mongodb').MongoClient;
-// const uri = "mongodb+srv://lisbethmachado:2k19Pepp$@cluster1.0lage.mongodb.net/<dbname>?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true });
-// client.connect(err => {
-//   const collection = client.db("donuts").collection("donuts");
-//   // perform actions on the collection object
-//   client.close();
-// });
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://lisbethmachado:2k19Pepp$@cluster1.0lage.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, });
+client.connect(err => {
+  const collection = client.db("donuts").collection("donuts");
+  // perform actions on the collection object
+  client.close();
+});
 
 mongoose.connect(process.env.MONGO_Atlas || "mongodb://localhost/donuts",
 {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false
+  // useUnifiedTopology: true,
+  useCreateIndex: true
 }
 );
 
 app.listen(PORT, function() {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+  console.log(`💫   ==> Donuts API Server now listening on PORT ${PORT}!`);
 });
