@@ -14,7 +14,6 @@ import React, { useState, useEffect } from "react";
 function Donuts() {
     // Setting our component's initial state
     const [donuts, setDonuts] = useState([])
-    const [ate, setAte] = useState([])
     const [formObject, setFormObject] = useState({})
 
 
@@ -36,8 +35,7 @@ function Donuts() {
 
     function eatDonut(id) {
         API.updateDonut(id)
-            // .then(res => console.log("Eat " + JSON.stringify(res.data.title)))
-            .then(res => setAte({ate: true}))
+            .then(res => loadDonuts())
             .catch(err => console.log(err));
     };
 
@@ -94,9 +92,8 @@ function Donuts() {
                                     {/* <strong> */}
                                         {donut.title}
                                     {/* </strong> */}
-                                    <EatBtn 
-                                    onClick={() => eatDonut({ate: true})}/>
-                                    {/* <DeleteBtn onClick={() => deleteDonut(donut._id)} /> */}
+                                    <EatBtn onClick={eatDonut}/>
+                                    <DeleteBtn onClick={() => deleteDonut(donut._id)} />
                                 </ListItem>
                             ))}
                         </List>
@@ -109,12 +106,12 @@ function Donuts() {
                     <Jumbotron>
                         <h1>Gone. <span role="img" aria-label="heartbreak-emoji">💔</span></h1>
                     </Jumbotron>
-                    {ate.length ? (
+                    {/* {ate.length ? (
                         <List>
                             {ate.map(donut => (
                                 <ListItem key={donut._id}>
                                     <strong>
-                                        {ate.title}
+                                    {count}
                                     </strong>
                                     <DeleteBtn onClick={() => deleteDonut(donut._id)} />
                                 </ListItem>
@@ -122,7 +119,7 @@ function Donuts() {
                         </List>
                     ) : (
                             <h3>No Results to Display</h3>
-                        )}
+                        )} */}
                 </Col>
             </Row>
             <Row>

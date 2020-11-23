@@ -22,9 +22,9 @@ module.exports = {
   },
   update: function(req, res) {
     db.Donut
-      .findOneAndUpdate({ _id: req.params.id }, req.body.ate)
+      .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
-      .then(console.log("Selected" + _id))
+      .then(console.log("Selected" + res))
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
