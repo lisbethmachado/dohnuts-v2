@@ -40,11 +40,11 @@ function Donuts() {
                 .catch(err => console.log(err));
     };
 
-    // function deleteDonut(id) {
-    //     API.deleteDonut(id)
-    //         .then(res => loadDonuts())
-    //         .catch(err => console.log(err));
-    // };
+    function deleteDonut(id) {
+        API.deleteDonut(id)
+            .then(res => loadDonuts())
+            .catch(err => console.log(err));
+    };
 
     function handleInputChange(event) {
         const { name, value } = event.target;
@@ -111,17 +111,17 @@ function Donuts() {
                     <Jumbotron>
                         <h1>Gone. <span role="img" aria-label="heartbreak-emoji">💔</span></h1>
                     </Jumbotron>
-                    <List>
+                    {/* <List>
                         <ListItem >
                         <p>No Results to Display<DeleteBtn /></p>
                         
                         </ListItem>
-                    </List>
+                    </List> */}
 
                     {/* 
                     Display List of doutes.ate.true
                     */}
-                        {/* {donuts.length ? (
+                        {donuts.length ? (
                             <List>
                                 {donuts.map(donut => (
                                     <ListItem key={donut._id}>
@@ -132,7 +132,7 @@ function Donuts() {
                             </List>
                         ) : (
                                 <h3>No Results to Display</h3>
-                            )} */}
+                            )}
                 </Col>
             </Row>
             <Row>
