@@ -111,6 +111,12 @@ function Donuts() {
                     <Jumbotron>
                         <h1>Gone. <span role="img" aria-label="heartbreak-emoji">💔</span></h1>
                     </Jumbotron>
+                    <List>
+                        <ListItem >
+                        <p>No Results to Display<DeleteBtn /></p>
+                        
+                        </ListItem>
+                    </List>
 
                     {/* 
                     Display List of doutes.ate.true

@@ -60,6 +60,6 @@ Allow your inner baker to dream up custom donut recipes. Create a list of desire
 For repository and more information visit [Github](http://www.github.com/lisbethmachado). You may contact us via [E-mail](mailto:lisbeth.webdev@gmail.com) with questions or suggestions. Thank you for your interest!
 
 ## License
-<!-- Copyright 2020 - present Lisbeth Machado.
+<!-- Copyright 2020 - present Lisbeth Machado. -->
 This project is licensed under the terms of the MIT license. 
-More information is available at [opensource.org/licenses](https://opensource.org/licenses/MIT) -->
+More information is available at [opensource.org/licenses](https://opensource.org/licenses/MIT)
