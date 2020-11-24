@@ -35,9 +35,9 @@ function Donuts() {
     };
 
     function eatDonut(id) {
-            API.updateDonut(id)
-                .then(res => loadAte())
-                .catch(err => console.log(err));
+        API.updateDonut(id)
+            .then(res => loadAte())
+            .catch(err => console.log(err));
     };
 
     function deleteDonut(id) {
@@ -97,10 +97,10 @@ function Donuts() {
                             {donuts.map(donut => (
                                 <ListItem key={donut._id}>
                                     {donut.title}
-                                    <EatBtn onClick={eatDonut}/>
+                                    <EatBtn onClick={eatDonut} />
                                     {/* <DeleteBtn onClick={() => deleteDonut(donut._id)} />
-                              */}  
-                              </ListItem> 
+                              */}
+                                </ListItem>
                             ))}
                         </List>
                     ) : (
@@ -121,18 +121,18 @@ function Donuts() {
                     {/* 
                     Display List of doutes.ate.true
                     */}
-                        {donuts.length ? (
-                            <List>
-                                {donuts.map(donut => (
-                                    <ListItem key={donut._id}>
-                                        {donut.title}
-                                        <DeleteBtn onClick={(_id) => deleteDonut(donut._id)} />
-                                    </ListItem>
-                                ))}
-                            </List>
-                        ) : (
-                                <h3>No Results to Display</h3>
-                            )}
+                    {donuts.length ? (
+                        <List>
+                            {donuts.map(donut => (
+                                <ListItem key={donut._id}>
+                                    {donut.title}
+                                    <DeleteBtn onClick={(_id) => deleteDonut(donut._id)} />
+                                </ListItem>
+                            ))}
+                        </List>
+                    ) : (
+                            <h3>No Results to Display</h3>
+                        )}
                 </Col>
             </Row>
             <Row>

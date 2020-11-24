@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const donuts = new Schema({
   title: { type: String, required: true },
-  ate: { type: Boolean},
+  ate: { type: Boolean, default: false},
   date: { type: Date, default: Date.now }
 });
 
