@@ -5,7 +5,7 @@ module.exports = {
     db.Donut
       .find(req.query)
       .sort({ date: -1 })
-      .then(dbModel => res.json(dbModel) + console.log("Results: " + dbModel))
+      .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
