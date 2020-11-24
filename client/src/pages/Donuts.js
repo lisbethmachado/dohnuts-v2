@@ -14,6 +14,7 @@ import React, { useState, useEffect } from "react";
 function Donuts() {
     // Setting our component's initial state
     const [donuts, setDonuts] = useState([])
+    const [isAte, setAte] = useState([])
     const [formObject, setFormObject] = useState({})
 
 
@@ -27,17 +28,23 @@ function Donuts() {
             .catch(err => console.log(err));
     };
 
-    function eatDonut(id) {
-        API.updateDonut(id)
-            .then(res => loadDonuts())
+    function loadAte() {
+        API.getDonuts({ ate: true })
+            .then(res => setAte([isAte]))
             .catch(err => console.log(err));
     };
 
-    function deleteDonut(id) {
-        API.deleteDonut(id)
-            .then(res => loadDonuts())
-            .catch(err => console.log(err));
+    function eatDonut(id) {
+            API.updateDonut(id)
+                .then(res => loadAte())
+                .catch(err => console.log(err));
     };
+
+    // function deleteDonut(id) {
+    //     API.deleteDonut(id)
+    //         .then(res => loadDonuts())
+    //         .catch(err => console.log(err));
+    // };
 
     function handleInputChange(event) {
         const { name, value } = event.target;
@@ -60,8 +67,8 @@ function Donuts() {
             <Row>
                 <Col size="md-12 sm-12">
                     <Banner />
-                    </Col>
-                    </Row>
+                </Col>
+            </Row>
             <Row>
                 <Col size="md-4 sm-12">
                     <Jumbotron>
@@ -81,7 +88,7 @@ function Donuts() {
               </FormBtn>
                     </form>
                     <DonutSpinner />
-                    
+
                 </Col>
                 <Col size="md-4 sm-12">
                     <Jumbotron><h1>Ready! <span role="img" aria-label="donut-emoji">🍩</span></h1></Jumbotron>
@@ -89,9 +96,11 @@ function Donuts() {
                         <List>
                             {donuts.map(donut => (
                                 <ListItem key={donut._id}>
-                                        {donut.title}
-                                    <EatBtn onClick={() => eatDonut(donut._id)}/>
-                                </ListItem>
+                                    {donut.title}
+                                    <EatBtn onClick={eatDonut}/>
+                                    {/* <DeleteBtn onClick={() => deleteDonut(donut._id)} />
+                              */}  
+                              </ListItem> 
                             ))}
                         </List>
                     ) : (
@@ -102,20 +111,22 @@ function Donuts() {
                     <Jumbotron>
                         <h1>Gone. <span role="img" aria-label="heartbreak-emoji">💔</span></h1>
                     </Jumbotron>
-                    {donuts.length ? (
-                        <List>
-                            {donuts.map(donut => (
-                                <ListItem key={donut._id}>
-                                    <strong>
-                                    {donuts.title}
-                                    </strong>
-                                    <DeleteBtn onClick={() => deleteDonut(donut._id)} />
-                                </ListItem>
-                            ))}
-                        </List>
-                    ) : (
-                            <h3>No Results to Display</h3>
-                        )}
+
+                    {/* 
+                    Display List of doutes.ate.true
+                    */}
+                        {/* {donuts.length ? (
+                            <List>
+                                {donuts.map(donut => (
+                                    <ListItem key={donut._id}>
+                                        {donut.title}
+                                        <DeleteBtn onClick={(_id) => deleteDonut(donut._id)} />
+                                    </ListItem>
+                                ))}
+                            </List>
+                        ) : (
+                                <h3>No Results to Display</h3>
+                            )} */}
                 </Col>
             </Row>
             <Row>
