@@ -11,6 +11,7 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
+    "watch": "nodemon server.js",
     "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
@@ -27,6 +28,7 @@
     "express": "^4.16.3",
     "mongoose": "^5.3.16",
     "if-env": "^1.0.4",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "morgan": "^1.9.1"
   }
 }

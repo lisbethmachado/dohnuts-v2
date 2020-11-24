@@ -22,19 +22,14 @@ module.exports = {
   },
   update: function(req, res) {
     db.Donut
-    findByIdAndUpdate(
-      params.id,
-      { $push: { ate: true } },
-    )
+    findByIdAndUpdate(params.id,
+      { $push: { ate: true } },)
       .then(dbModel => {
         res.json(dbModel);
       })
       .catch(err => {
         res.json(err);
       })
-      .then(dbModel => res.json(dbModel))
-      .then(console.log("Selected" + res))
-      .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
     db.Donut

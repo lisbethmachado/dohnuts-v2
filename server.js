@@ -2,17 +2,23 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const initDB = require("./config/initDB");
+const morgan = require("morgan")
+const logger = require("morgan");
 const PORT = process.env.PORT || 3002;
 const routes = require("./routes")
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+if (process.env.NODE_ENV !== "production") {
+  app.use(morgan("dev"));
+}
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.use(routes);
+app.use(routes, logger);
 
 initDB();
 
