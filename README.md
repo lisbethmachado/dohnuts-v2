@@ -1,4 +1,4 @@
-## D'ohnuts!
+# D'ohnuts!
 <!-- [![Build Status](https://travis-ci.org/lisbethmachado/dohnuts.svg?branch=master)](https://travis-ci.org/lisbethmachado/dohnuts-v2) -->
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub issues](https://img.shields.io/github/issues/lisbethmachado/dohnuts-v2)](https://github.com/lisbethmachado/dohnuts-v2/issues)
