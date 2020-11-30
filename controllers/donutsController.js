@@ -26,6 +26,7 @@ module.exports = {
       { $push: { ate: true } },)
       .then(dbModel => {
         res.json(dbModel);
+        console.log("Donut " + dbModel)
       })
       .catch(err => {
         res.json(err);

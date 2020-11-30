@@ -22,6 +22,10 @@ function Donuts() {
         loadDonuts()
     }, [])
 
+    useEffect(() => {
+        loadAte()
+    }, [])
+
     function loadDonuts() {
         API.getDonuts()
             .then(res => setDonuts(res.data))
@@ -98,8 +102,7 @@ function Donuts() {
                                 <ListItem key={donut._id}>
                                     {donut.title}
                                     <EatBtn onClick={eatDonut} />
-                                    {/* <DeleteBtn onClick={() => deleteDonut(donut._id)} />
-                              */}
+                                    <DeleteBtn onClick={() => deleteDonut(donut._id)} />
                                 </ListItem>
                             ))}
                         </List>
@@ -121,10 +124,10 @@ function Donuts() {
                     {/* 
                     Display List of doutes.ate.true
                     */}
-                    {donuts.length ? (
+                    {/* {isAte.length ? (
                         <List>
-                            {donuts.map(donut => (
-                                <ListItem key={donut._id}>
+                            {isAte.map(ate => (
+                                <ListItem key={ate == true}>
                                     {donut.title}
                                     <DeleteBtn onClick={(_id) => deleteDonut(donut._id)} />
                                 </ListItem>
@@ -132,7 +135,7 @@ function Donuts() {
                         </List>
                     ) : (
                             <h3>No Results to Display</h3>
-                        )}
+                        )} */}
                 </Col>
             </Row>
             <Row>
